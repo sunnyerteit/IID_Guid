@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:main.pages"
       mc:Ignorable="d" 
       d:DesignHeight="685" d:DesignWidth="372"
-      Title="rov" Background="#FFF7ABAB">
+      Title="rov">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -22,9 +22,10 @@
                 <RowDefinition Height="68*"/>
                 <RowDefinition Height="68*"/>
                 <RowDefinition Height="68*"/>
+                <RowDefinition Height="68*"/>
                 <RowDefinition Height="667*"/>
             </Grid.RowDefinitions>
-            <Grid Background="#FF302F3E">
+            <Grid Background="#FF302F3E" Margin="0,2,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
@@ -45,7 +46,72 @@
                 </Rectangle>
 
             </Grid>
-            <Label Content="Alarms" Padding="0" Margin="0" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="2"/>
+            <Grid Background="#FF302F3E" Grid.Row="1" Margin="0,2,0,0">
+                <Label Content="Status self check" Padding="0" Margin="16.5,0,0,0" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" VerticalAlignment="Center"/>
+                
+            </Grid>
+            <Label Content="Alarms" Padding="0" Margin="0,0,0,10" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Bottom"/>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="315*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Background="#FF302F3E" Margin="0,0,1,0">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="1">
+
+                </Grid>
+
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="2">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="3">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="4">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0,0,0" Grid.Column="5">
+                    <Label Content="Low connection" Padding="0" Margin="11,0,0,0" FontFamily="Roboto Light" FontSize="9" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Center"/>
+
+                </Grid>
+            </Grid>
+            <Label Content="Sensors" Padding="0" Margin="0,0,0,10" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="4" VerticalAlignment="Bottom"/>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="68*"/>
+                    <ColumnDefinition Width="315*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Background="#FF302F3E" Margin="0,0,1,0">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="1">
+
+                </Grid>
+
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="2">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="3">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="4">
+
+                </Grid>
+                <Grid Background="#FF302F3E" Margin="1,0,0,0" Grid.Column="5">
+
+                </Grid>
+            </Grid>
+            <Grid Background="#FF302F3E" Grid.Row="6" Margin="0,2,0,0"/>
 
         </Grid>
     </Grid>

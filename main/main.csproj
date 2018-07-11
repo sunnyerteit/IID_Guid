@@ -78,6 +78,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\right_video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\rov.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +96,9 @@
     </Compile>
     <Compile Include="pages\report.xaml.cs">
       <DependentUpon>report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\right_video.xaml.cs">
+      <DependentUpon>right_video.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\rov.xaml.cs">
       <DependentUpon>rov.xaml</DependentUpon>

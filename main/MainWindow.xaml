@@ -92,23 +92,60 @@
 
                     </Rectangle>
                     <Canvas>
-                        <Canvas Width="50" Height="50" Canvas.Left="50" Canvas.Top="100">
+                        <Canvas Width="50" Height="50" Canvas.Left="300" Canvas.Top="100">
                             <Rectangle Fill="#FF7DD5DC" Width="30" Height="30" Margin="10,10,0,0">
                                 <Rectangle.OpacityMask>
                                     <ImageBrush ImageSource="images/map_rov.png"/>
                                 </Rectangle.OpacityMask>
                             </Rectangle>
+                            <Ellipse Width="50" Height="50" RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.Stroke>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#19FFFFFF" Offset="0"/>
+                                        <GradientStop Color="#7FFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Stroke>
+                                <Ellipse.RenderTransform>
+                                    <!-- giving the transform a name tells the framework not to freeze it -->
+                                    <RotateTransform x:Name="no_freeze" />
+                                </Ellipse.RenderTransform>
+                                <Ellipse.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)" To="360" Duration="0:0:1.5" RepeatBehavior="Forever" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Ellipse.Triggers>
+
+                            </Ellipse>
+                            <!--
                             <Rectangle Width="50" Height="50" RenderTransformOrigin="0.5,0.5">
                                 <Rectangle.Fill>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#33FFFFFF" Offset="0"/>
-                                        <GradientStop Color="White" Offset="1"/>
+                                        <GradientStop Color="White" Offset="0.651"/>
                                     </LinearGradientBrush>
                                 </Rectangle.Fill>
                                 <Rectangle.OpacityMask>
                                     <ImageBrush ImageSource="images/map_rov_ring.png"/>
                                 </Rectangle.OpacityMask>
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform x:Name="noFreeze" />
+                                </Rectangle.RenderTransform>
+                                <Rectangle.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)" To="-360" Duration="0:0:1" RepeatBehavior="Forever" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Rectangle.Triggers>
                             </Rectangle>
+                        -->
+                        
                         </Canvas>
                         <Rectangle Fill="#FFD4E584" Width="30" Height="30" Canvas.Left="600" Canvas.Top="340">
                             <Rectangle.OpacityMask>

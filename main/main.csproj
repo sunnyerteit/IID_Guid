@@ -115,6 +115,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\battery_high_res.png" />
     <Resource Include="images\example.PNG" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\battery.png" />
+    <Resource Include="images\bio.png" />
+    <Resource Include="images\collision.png" />
+    <Resource Include="images\corrosion.png" />
+    <Resource Include="images\position_17.png" />
+    <Resource Include="images\radar.png" />
+    <Resource Include="images\weather.png" />
+    <Resource Include="images\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\projectile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\wave.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

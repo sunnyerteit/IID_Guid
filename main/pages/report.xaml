@@ -8,8 +8,90 @@
       d:DesignHeight="685" d:DesignWidth="372"
       Title="report">
 
-    <Grid Background="Black">
-        
-        <Label Content="report"/>
+    <Grid Margin="16,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="434*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="326*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF302F3E"/>
+        <Label Content="Alarms" Padding="0" Margin="0,0,0,10" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="1" VerticalAlignment="Bottom"/>
+        <Grid Background="#FF302F3E" Grid.Row="2">
+            <TextBlock TextWrapping="Wrap" FontFamily="Roboto Light" Foreground="#FFDFDFE1" Margin="16" FontSize="10">Brødrene Dal ('The Brothers Dal') is a Norwegian television series by Norwegian comedy trio KLM (Kirkvaag, Lystad, Mjøen), that originally aired as four series in 1979, 1982, 1994 and 2005. A fifth adventure, originally performed on stage in 1997, was edited and released as a movie in 2010.<LineBreak/><LineBreak/>The series bears many similarities to Monty Python's Flying Circus, as the three actors play nearly all the different roles in the series, often multiple roles in each episode. Usually, the series would have a main plot keeping the story and episodes together, but most of the content being semi-related or unrelated sketches. This is especially true for the first series Professor Drøvels Hemmelighet (1979), where the story frequently diverges from the main plot for entire episodes, only to jump back to the plot in the last minute. In the other series, the story is more centered on the actual plot.</TextBlock>
+        </Grid>
+        <Label Content="Tasks" Padding="0" Margin="0,0,0,10" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+        <Grid Background="#FF302F3E" Grid.Row="4">
+            <StackPanel>
+
+                <Label Content="7/10 tasks: 70% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <Grid>
+                    <Rectangle Fill="#FF2C2C3C" Height="7" Margin="15,0"></Rectangle>
+                    <Rectangle Height="7" Margin="15,0" Width="225" HorizontalAlignment="Left">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.Transform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterX="150" ScaleX="30" ScaleY="4.9"/>
+                                        <SkewTransform CenterX="150"/>
+                                        <RotateTransform CenterX="150" Angle="270  "/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.Transform>
+                                <GradientStop Color="#FFE46C6B"/>
+                                <GradientStop Color="#FFE36E90" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                </Grid>
+                <Label Content="12/12 tasks: 100% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <Grid>
+                    <Rectangle Fill="#FF2C2C3C" Height="7" Margin="15,0"></Rectangle>
+                    <Rectangle Height="7" Margin="15,0" Width="300" HorizontalAlignment="Left">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.Transform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterX="150" ScaleX="30" ScaleY="4.9"/>
+                                        <SkewTransform CenterX="150"/>
+                                        <RotateTransform CenterX="150" Angle="270  "/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.Transform>
+                                <GradientStop Color="#FFE46C6B"/>
+                                <GradientStop Color="#FFE36E90" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                </Grid>
+                <Label Content="1/3 tasks: 33% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <Grid>
+                    <Rectangle Fill="#FF2C2C3C" Height="7" Margin="15,0"></Rectangle>
+                    <Rectangle Height="7" Margin="15,0" Width="100" HorizontalAlignment="Left">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.Transform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterX="150" ScaleX="30" ScaleY="4.9"/>
+                                        <SkewTransform CenterX="150"/>
+                                        <RotateTransform CenterX="150" Angle="270  "/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.Transform>
+                                <GradientStop Color="#FFE46C6B"/>
+                                <GradientStop Color="#FFE36E90" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                </Grid>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Page>

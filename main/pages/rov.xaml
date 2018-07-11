@@ -62,18 +62,48 @@
                 </Grid.ColumnDefinitions>
                 <Grid Background="#FF302F3E" Margin="0,0,1,0">
 
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/battery.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="1">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/collision.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
 
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="2">
+                    <Rectangle Fill="#D27382" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/wifi.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="3">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/position_17.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="4">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/projectile.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0,0,0" Grid.Column="5">
@@ -92,27 +122,58 @@
                     <ColumnDefinition Width="315*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Background="#FF302F3E" Margin="0,0,1,0">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/radar.png"/>
+                        </Rectangle.OpacityMask>
 
+                    </Rectangle>
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="1">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/corrosion.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
 
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="2">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/bio.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="3">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/weather.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="4">
+                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/wave.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0,0,0" Grid.Column="5">
 
                 </Grid>
             </Grid>
-            <Grid Background="#FF302F3E" Grid.Row="6" Margin="0,2,0,0"/>
+            <Grid Background="#FF302F3E" Grid.Row="6" Margin="0,2,0,0">
 
+                <Label Content="Reynold's number: 7651.1" Padding="0" Margin="11,0,0,0" FontFamily="Roboto Light" FontSize="9" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Center"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

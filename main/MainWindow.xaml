@@ -27,7 +27,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid>
-                        <Grid Margin="0" Height="30" VerticalAlignment="Bottom" Background="#4C302F3E">
+                        <Grid Margin="0" Height="30" VerticalAlignment="Bottom" Background="#4C302F3E" Panel.ZIndex="1">
                             <Rectangle Width="17" Height="17" Grid.Row="7" HorizontalAlignment="Left" Margin="16,0,0,0" Fill="#FFDFDFE1">
                                 <Rectangle.OpacityMask>
                                     <ImageBrush ImageSource="images/capture.png"/>
@@ -45,9 +45,12 @@
                                 </Rectangle.OpacityMask>
                             </Rectangle>
                         </Grid>
+                        <Frame x:Name="LEFT_VIDEO_FRAME">
+                            
+                        </Frame>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Grid Margin="0" Height="30" VerticalAlignment="Bottom" Background="#4C302F3E">
+                        <Grid Margin="0" Height="30" VerticalAlignment="Bottom" Background="#4C302F3E" Panel.ZIndex="1">
 
                             <Rectangle Width="17" Height="17" Grid.Row="7" HorizontalAlignment="Left" Margin="16,0,0,0" Fill="#FFDFDFE1">
                                 <Rectangle.OpacityMask>

@@ -45,8 +45,8 @@
                                 </Rectangle.OpacityMask>
                             </Rectangle>
                         </Grid>
-                        <Frame x:Name="LEFT_VIDEO_FRAME">
-                            
+                        <Frame x:Name="LEFT_VIDEO_FRAME" NavigationUIVisibility="Hidden">
+
                         </Frame>
                     </Grid>
                     <Grid Grid.Column="1">
@@ -69,13 +69,60 @@
                                 </Rectangle.OpacityMask>
                             </Rectangle>
                         </Grid>
-                        <Frame x:Name="RIGHT_VIDEO_FRAME">
-                            
+                        <Frame x:Name="RIGHT_VIDEO_FRAME" NavigationUIVisibility="Hidden">
+
                         </Frame>
                     </Grid>
                 </Grid>
 
                 <Grid Grid.Row="1" Background="#FFD27382"></Grid>
+
+                <!-- MAP -->
+                <Grid Grid.Row="2">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="images/map_temp.PNG" Stretch="UniformToFill"/>
+                    </Grid.Background>
+                    <Rectangle Width="7" Height="349" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,28,0,0" RadiusX="4" RadiusY="4">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE0E778" Offset="1"/>
+                                <GradientStop Color="#FF71D3E8"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+
+                    </Rectangle>
+                    <Canvas>
+                        <Canvas Width="50" Height="50" Canvas.Left="50" Canvas.Top="100">
+                            <Rectangle Fill="#FF7DD5DC" Width="30" Height="30" Margin="10,10,0,0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="images/map_rov.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Rectangle Width="50" Height="50" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#33FFFFFF" Offset="0"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="images/map_rov_ring.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Canvas>
+                        <Rectangle Fill="#FFD4E584" Width="30" Height="30" Canvas.Left="600" Canvas.Top="340">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="images/map_projectile.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <Rectangle Fill="#FF71D3E8" Width="30" Height="30" Canvas.Left="1000" Canvas.Top="30">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="images/map_torpedo.png"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                    </Canvas>
+
+                </Grid>
 
             </Grid>
             <!-- Vertical line -->

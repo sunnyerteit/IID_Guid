@@ -171,5 +171,18 @@
   <ItemGroup>
     <Resource Include="images\wave.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\map_temp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\map_rov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\map_projectile.png" />
+    <Resource Include="images\map_torpedo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\map_rov_ring.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

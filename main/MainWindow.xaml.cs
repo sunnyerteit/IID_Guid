@@ -30,6 +30,8 @@ namespace main
         public double INPUT_Y;
         public double POSITION_X;
         public double POSITION_Y;
+        public double DEPTH_INPUT;
+        public double DEPTH;
 
         // Brushes
         SolidColorBrush DARK_BACKGROUND = new SolidColorBrush();
@@ -37,6 +39,18 @@ namespace main
 
         SolidColorBrush LIGHT_GRAY = new SolidColorBrush();
         SolidColorBrush DARK_GRAY = new SolidColorBrush();
+
+        
+        SolidColorBrush DEPTH_0 = new SolidColorBrush();
+        SolidColorBrush DEPTH_1 = new SolidColorBrush();
+        SolidColorBrush DEPTH_2 = new SolidColorBrush();
+        SolidColorBrush DEPTH_3 = new SolidColorBrush();
+        SolidColorBrush DEPTH_4 = new SolidColorBrush();
+        SolidColorBrush DEPTH_5 = new SolidColorBrush();
+        SolidColorBrush DEPTH_6 = new SolidColorBrush();
+        SolidColorBrush DEPTH_7 = new SolidColorBrush();
+        SolidColorBrush DEPTH_8 = new SolidColorBrush();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -54,11 +68,24 @@ namespace main
             // Temp velocity
             INPUT_X = 0.0;
             INPUT_Y = 0.0;
+            DEPTH_INPUT = 0.0;
+            DEPTH = 0.0;
 
             LIGHT_BACKGROUND.Color = Color.FromArgb(255, 60, 59, 77);
             DARK_BACKGROUND.Color = Color.FromArgb(255, 56, 55, 72);
             DARK_GRAY.Color = Color.FromArgb(255, 137, 136, 145);
             LIGHT_GRAY.Color = Color.FromArgb(255, 223, 223, 225);
+
+            DEPTH_0.Color = Color.FromRgb(113, 211, 232);
+            DEPTH_1.Color = Color.FromRgb(125, 213, 220);
+            DEPTH_2.Color = Color.FromRgb(138, 215, 207);
+            DEPTH_3.Color = Color.FromRgb(150, 218, 195);
+            DEPTH_4.Color = Color.FromRgb(162, 220, 182);
+            DEPTH_5.Color = Color.FromRgb(175, 222, 170);
+            DEPTH_6.Color = Color.FromRgb(199, 227, 145);
+            DEPTH_7.Color = Color.FromRgb(212, 229, 132);
+            DEPTH_8.Color = Color.FromRgb(224, 231, 120);
+
 
             Loaded += Window_Loaded;
         }
@@ -121,11 +148,86 @@ namespace main
             }
         }
 
+        public void Depth_Color(double depth)
+        {
+            if (depth < 0.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_0;
+            }
+            else if (depth < 1.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_1;
+            }
+            else if (depth < 2.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_2;
+            }
+            else if (depth < 3.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_3;
+            }
+            else if (depth < 4.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_4;
+            }
+            else if (depth < 5.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_5;
+            }
+            else if (depth < 6.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_6;
+            }
+            else if (depth < 7.5)
+            {
+                _DEPTH_COLOR.Fill = DEPTH_7;
+            }
+            else
+            {
+                _DEPTH_COLOR.Fill = DEPTH_8;
+            }
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Thread Velocity_thread = new Thread(()
                 => Velocity_components());
             Velocity_thread.Start();
+
+            Thread Depth_thread = new Thread(()
+                => Depth_components());
+            Depth_thread.Start();
+        }
+
+        void Depth_components()
+        {
+            while (true)
+            {
+                if (DEPTH_INPUT > 0)
+                {
+                    DEPTH += DEPTH_INPUT * DEPTH_INPUT * 0.1;
+                    DEPTH_INPUT -= DEPTH_INPUT * DEPTH_INPUT * 0.05;
+                }
+                else
+                {
+                    DEPTH -= DEPTH_INPUT * DEPTH_INPUT * 0.1;
+                    DEPTH_INPUT += DEPTH_INPUT * DEPTH_INPUT * 0.05;
+
+                    if (DEPTH < 0)
+                    {
+                        DEPTH = 0.0;
+                    }
+                }
+
+                Dispatcher.Invoke(() =>
+                {
+                    Depth_Color(DEPTH);
+                    _DEPTH_LABEL.Content = $"{DEPTH.ToString("0.0")}";
+                });
+
+                Thread.Sleep(50);
+
+            }
         }
 
         void Velocity_components()
@@ -154,13 +256,18 @@ namespace main
                     INPUT_Y += INPUT_Y * INPUT_Y * 0.05;
                 }
 
-                double velocity =Math.Sqrt(INPUT_Y * INPUT_Y + INPUT_X * INPUT_X);
+                double velocity = Math.Sqrt(INPUT_Y * INPUT_Y + INPUT_X * INPUT_X);
+
+                double longitude = 10.3501 + POSITION_Y / 1000.0;
+                double latitude = 63.4502 + POSITION_X / 1000.0;
 
                 Dispatcher.Invoke(() =>
                 {
                     Canvas.SetLeft(_ROV, POSITION_X);
                     Canvas.SetTop(_ROV, POSITION_Y);
                     _LABEL_SOG.Content = $"{velocity.ToString("0.0")} m/s";
+                    _LABEL_LONGITUDE.Content = $"{longitude.ToString("0.0000")}";
+                    _LABEL_LATITUDE.Content = $"{latitude.ToString("0.0000")}";
                 });
                 Thread.Sleep(50);
 
@@ -201,6 +308,37 @@ namespace main
             if (e.Key == Key.D3)
             {
                 Change_Tab(2);
+            }
+
+            if (e.Key == Key.Left)
+            {
+                LEFT_VIDEO.CAMERA_INPUT_X = -1.0;
+                RIGHT_VIDEO.CAMERA_INPUT_X = -1.0;
+            }
+            else if (e.Key == Key.Right)
+            {
+                LEFT_VIDEO.CAMERA_INPUT_X = 1.0;
+                RIGHT_VIDEO.CAMERA_INPUT_X = 1.0;
+            }
+
+            if (e.Key == Key.Up)
+            {
+                LEFT_VIDEO.CAMERA_INPUT_Y = -1.0;
+                RIGHT_VIDEO.CAMERA_INPUT_Y = -1.0;
+            }
+            else if (e.Key == Key.Down)
+            {
+                LEFT_VIDEO.CAMERA_INPUT_Y = 1.0;
+                RIGHT_VIDEO.CAMERA_INPUT_Y = 1.0;
+            }
+
+            if (e.Key == Key.K)
+            {
+                DEPTH_INPUT = 1.0;
+            }
+            else if (e.Key == Key.J)
+            {
+                DEPTH_INPUT = - 1.0;
             }
         }
 

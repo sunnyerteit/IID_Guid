@@ -184,5 +184,24 @@
   <ItemGroup>
     <Resource Include="images\map_rov_ring.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\direction_compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\pitch_roll_0.png" />
+    <Resource Include="images\pitch_roll_1.png" />
+    <Resource Include="images\pitch_roll_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\pitch_roll_3.png" />
+    <Resource Include="images\pitch_roll_4.png" />
+    <Resource Include="images\pitch_roll_5.png" />
+    <Resource Include="images\pitch_roll_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

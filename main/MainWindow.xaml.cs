@@ -32,6 +32,10 @@ namespace main
         public double POSITION_Y;
         public double DEPTH_INPUT;
         public double DEPTH;
+        public double PITCH;
+        public double PITCH_INPUT;
+        public double ROLL;
+        public double ROLL_INPUT;
 
         // Brushes
         SolidColorBrush DARK_BACKGROUND = new SolidColorBrush();
@@ -197,6 +201,10 @@ namespace main
             Thread Depth_thread = new Thread(()
                 => Depth_components());
             Depth_thread.Start();
+
+            Thread Orientation_thread = new Thread(()
+                => Orientation_components());
+            Orientation_thread.Start();
         }
 
         void Depth_components()
@@ -227,6 +235,29 @@ namespace main
 
                 Thread.Sleep(50);
 
+            }
+        }
+
+        void Orientation_components()
+        {
+            while (true)
+            {
+                if (PITCH_INPUT > 0)
+                {
+                    PITCH += PITCH_INPUT * PITCH_INPUT * 0.1;
+                    PITCH_INPUT -= PITCH_INPUT * PITCH_INPUT * 0.1;
+                }
+                else if (PITCH_INPUT < 0)
+                {
+                    PITCH -= PITCH_INPUT * PITCH_INPUT * 0.1;
+                    PITCH_INPUT += PITCH_INPUT * PITCH_INPUT * 0.1;
+                }
+                Dispatcher.Invoke(() =>
+                {
+                    ROV.Pitch(PITCH);
+                });
+
+                Thread.Sleep(50);
             }
         }
 
@@ -339,6 +370,15 @@ namespace main
             else if (e.Key == Key.J)
             {
                 DEPTH_INPUT = - 1.0;
+            }
+
+            if (e.Key == Key.H)
+            {
+                PITCH_INPUT = 1.0;
+            }
+            else if (e.Key == Key.L)
+            {
+                PITCH_INPUT = - 1.0;
             }
         }
 

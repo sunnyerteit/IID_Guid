@@ -22,7 +22,46 @@ namespace main.pages
     {
         public rov()
         {
+
             InitializeComponent();
+        }
+
+        public void Pitch(double pitch)
+        {
+            if (pitch < - 1.0)
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_0.png")));
+            }
+
+            else if (pitch < - 0.66)
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_1.png")));
+            }
+
+            else if (pitch < - 0.33)
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_2.png")));
+            }
+
+            else if (pitch < 0.0)
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_3.png")));
+            }
+
+            else if (pitch < 0.33)
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_4.png")));
+            }
+
+            else if (pitch < 0.66)
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_5.png")));
+            }
+
+            else
+            {
+                _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_6.png")));
+            }
         }
     }
 }

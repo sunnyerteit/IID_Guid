@@ -37,31 +37,33 @@
                     </Rectangle.OpacityMask>
 
                 </Rectangle>
-                <Rectangle Fill="#FF898891" Width="89" Height="89" Margin="16,16,0,0">
+                <Rectangle x:Name="_DIRECTION" Fill="#FF898891" Width="89" Height="89" Margin="16,16,0,0" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.OpacityMask>
                         <ImageBrush ImageSource="/main;component/images/direction_compass.png"/>
                     </Rectangle.OpacityMask>
 
                 </Rectangle>
-                <Label Content="45" Margin="15,63,0,0" FontFamily="Roboto Medium" Foreground="#FF898891" HorizontalAlignment="Center" Width="30" HorizontalContentAlignment="Center"/>
+                <Label x:Name="_DIRECTION_LABEL" Content="45" Margin="15,63,0,0" FontFamily="Roboto Medium" Foreground="#FF898891" HorizontalAlignment="Center" Width="30" HorizontalContentAlignment="Center"/>
                 <Label Content="Pitch and roll:" Padding="0" Margin="16.5,16.5,0,0" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Column="1"/>
-                <Rectangle Fill="#FFDFDFE1" Width="89" Height="89" Margin="16,16,0,0" Grid.Column="1" HorizontalAlignment="Left" Panel.ZIndex="1">
-                    <Rectangle.OpacityMask>
-                        <ImageBrush ImageSource="/main;component/images/test.png"/>
-                    </Rectangle.OpacityMask>
+                <Canvas Grid.Column="1" Margin="16,16,0,0">
+                    <Rectangle Fill="#FFDFDFE1" Width="89" Height="89" Margin="16,16,0,0"  HorizontalAlignment="Left" Panel.ZIndex="1" RenderTransformOrigin="0,0">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/test.png"/>
+                        </Rectangle.OpacityMask>
 
-                </Rectangle>
-                <Rectangle x:Name="_PITCH_ROLL" Fill="#FF898891" Width="89" Height="89" Margin="16,16,0,0" Grid.Column="1" HorizontalAlignment="Left">
-                    <Rectangle.OpacityMask>
-                        <ImageBrush ImageSource="/main;component/images/pitch_roll_3.png"/>
-                    </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <Rectangle x:Name="_PITCH_ROLL" Fill="#FF898891" Width="89" Height="89" Margin="16,16,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/main;component/images/pitch_roll_3.png"/>
+                        </Rectangle.OpacityMask>
 
-                </Rectangle>
+                    </Rectangle>
+                </Canvas>
 
             </Grid>
             <Grid Background="#FF302F3E" Grid.Row="1" Margin="0,2,0,0">
                 <Label Content="Status self check" Padding="0" Margin="16.5,0,0,0" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" VerticalAlignment="Center"/>
-                
+
             </Grid>
             <Label Content="Alarms" Padding="0" Margin="0,0,0,10" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Bottom"/>
             <Grid Grid.Row="3">

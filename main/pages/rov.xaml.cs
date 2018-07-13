@@ -20,6 +20,8 @@ namespace main.pages
     /// </summary>
     public partial class rov : Page
     {
+        public RotateTransform ROTATE_TRANSFORM_ROLL;
+        public RotateTransform ROTATE_TRANSFORM_DIRECTION;
         public rov()
         {
 
@@ -62,6 +64,27 @@ namespace main.pages
             {
                 _PITCH_ROLL.OpacityMask = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/images/pitch_roll_6.png")));
             }
+        }
+
+        public void Roll(double roll)
+        {
+            ROTATE_TRANSFORM_ROLL = new RotateTransform(roll * 45.0);
+            _PITCH_ROLL.RenderTransform = ROTATE_TRANSFORM_ROLL;
+        }
+
+        public void Direction(double direction)
+        {
+            int direction_int = Convert.ToInt32(Mod(Convert.ToInt32(direction * 360), 360));
+            _DIRECTION_LABEL.Content = direction_int.ToString();
+
+            ROTATE_TRANSFORM_DIRECTION = new RotateTransform(- direction * 360.0);
+            _DIRECTION.RenderTransform = ROTATE_TRANSFORM_DIRECTION;
+        }
+
+        int Mod(int x, int m)
+        {
+            int r = x % m;
+            return r < 0 ? r + m : r;
         }
     }
 }

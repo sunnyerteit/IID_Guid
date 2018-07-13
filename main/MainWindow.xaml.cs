@@ -36,6 +36,9 @@ namespace main
         public double PITCH_INPUT;
         public double ROLL;
         public double ROLL_INPUT;
+        public double YAW;
+        public double YAW_INPUT;
+        public RotateTransform ROTATE_TRANSFORM_YAW;
 
         // Brushes
         SolidColorBrush DARK_BACKGROUND = new SolidColorBrush();
@@ -252,9 +255,49 @@ namespace main
                     PITCH -= PITCH_INPUT * PITCH_INPUT * 0.1;
                     PITCH_INPUT += PITCH_INPUT * PITCH_INPUT * 0.1;
                 }
+
+                if (ROLL_INPUT > 0)
+                {
+                    ROLL += ROLL_INPUT * ROLL_INPUT * 0.05;
+                    ROLL_INPUT -= ROLL_INPUT * ROLL_INPUT * 0.05;
+
+                    if (ROLL > 1)
+                    {
+                        ROLL = 1;
+                    }
+                }
+                else if ( ROLL_INPUT < 0)
+                {
+                    ROLL -= ROLL_INPUT * ROLL_INPUT * 0.05;
+                    ROLL_INPUT += ROLL_INPUT * ROLL_INPUT * 0.05;
+
+                    if (ROLL < - 1)
+                    {
+                        ROLL = - 1;
+                    }
+                }
+
+                if (YAW_INPUT > 0)
+                {
+                    YAW += YAW_INPUT * YAW_INPUT * 0.01;
+                    YAW_INPUT -= YAW_INPUT * YAW_INPUT * 0.05;
+
+                }
+                else if (YAW_INPUT < 0)
+                {
+                    YAW -= YAW_INPUT * YAW_INPUT * 0.01;
+                    YAW_INPUT += YAW_INPUT * YAW_INPUT * 0.05;
+                }
+
+                double yaw = Mod(Convert.ToInt32(YAW * 360), 360);
+
                 Dispatcher.Invoke(() =>
                 {
                     ROV.Pitch(PITCH);
+                    ROV.Roll(ROLL);
+                    ROV.Direction(YAW);
+                    ROTATE_TRANSFORM_YAW = new RotateTransform(yaw);
+                    _DEPTH_COLOR.RenderTransform = ROTATE_TRANSFORM_YAW;
                 });
 
                 Thread.Sleep(50);
@@ -380,6 +423,30 @@ namespace main
             {
                 PITCH_INPUT = - 1.0;
             }
+
+            if (e.Key == Key.M)
+            {
+                ROLL_INPUT = 1.0;
+            }
+            else if (e.Key == Key.N)
+            {
+                ROLL_INPUT = - 1.0;
+            }
+
+            if (e.Key == Key.D4)
+            {
+                YAW_INPUT = 1.0;
+            }
+            else if (e.Key == Key.D5)
+            {
+                YAW_INPUT = - 1.0;
+            }
+        }
+
+        int Mod(int x, int m)
+        {
+            int r = x % m;
+            return r < 0 ? r + m : r;
         }
 
     }

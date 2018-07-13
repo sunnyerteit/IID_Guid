@@ -170,18 +170,66 @@
                                 </Rectangle.Triggers>
                             </Rectangle>
                         -->
-                        
+
                         </Canvas>
-                        <Rectangle Fill="#FFD4E584" Width="30" Height="30" Canvas.Left="600" Canvas.Top="340">
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="images/map_projectile.png"/>
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
-                        <Rectangle Fill="#FF71D3E8" Width="30" Height="30" Canvas.Left="1000" Canvas.Top="30">
-                            <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="images/map_torpedo.png"/>
-                            </Rectangle.OpacityMask>
-                        </Rectangle>
+                        <Canvas Width="50" Height="50" Canvas.Left="432" Canvas.Top="356">
+                            <Rectangle Fill="#FFD4E584" Width="30" Height="30" Margin="10,10,0,0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="images/map_projectile.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Ellipse Width="50" Height="50" RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.Stroke>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Offset="0.008"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Stroke>
+                                <Ellipse.RenderTransform>
+                                    <!-- giving the transform a name tells the framework not to freeze it -->
+                                    <RotateTransform x:Name="no_freeze_2" />
+                                </Ellipse.RenderTransform>
+                                <Ellipse.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)" To="-360" Duration="0:0:1.5" RepeatBehavior="Forever" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Ellipse.Triggers>
+
+                            </Ellipse>
+                        </Canvas>
+                        <Canvas Width="50" Height="50" Canvas.Left="914" Canvas.Top="45">
+                            <Rectangle Fill="#FF71D3E8" Width="30" Height="30" Margin="10,10,0,0">
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="images/map_torpedo.png"/>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <Ellipse Width="50" Height="50" RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.Stroke>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Offset="0.008"/>
+                                        <GradientStop Color="#33FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Ellipse.Stroke>
+                                <Ellipse.RenderTransform>
+                                    <!-- giving the transform a name tells the framework not to freeze it -->
+                                    <RotateTransform x:Name="no_freeze_3" />
+                                </Ellipse.RenderTransform>
+                                <Ellipse.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)" To="-360" Duration="0:0:1.5" RepeatBehavior="Forever" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Ellipse.Triggers>
+
+                            </Ellipse>
+                        </Canvas>
                     </Canvas>
 
                 </Grid>
@@ -214,7 +262,18 @@
 
                         <Label Content="ROV:" FontFamily="Roboto" FontSize="6" Foreground="#FF898891" Padding="0" Margin="16,8,0,0" Grid.Row="1"/>
                         <Label Content="Elvegris" FontFamily="Roboto" Foreground="#FF898891" Padding="0" Margin="16,16,0,0" FontSize="10" Grid.Row="1"/>
+
                     </Grid>
+                    <Image Width="35" Height="35" HorizontalAlignment="Right" Margin="0,8,16,0" VerticalAlignment="Top" Source="images/profile.png">
+                        <Image.OpacityMask>
+                            <ImageBrush ImageSource="images/profile_mask.png"/>
+                        </Image.OpacityMask>
+                    </Image>
+                    <Ellipse Width="35" Height="35" Margin="0,8,16,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Ellipse.OpacityMask>
+                            <ImageBrush ImageSource="images/profile.png"/>
+                        </Ellipse.OpacityMask>
+                    </Ellipse>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>

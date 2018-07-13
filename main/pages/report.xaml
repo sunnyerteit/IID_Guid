@@ -27,7 +27,7 @@
         <Grid Background="#FF302F3E" Grid.Row="4">
             <StackPanel>
 
-                <Label Content="7/10 tasks: 70% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <Label Content="7/10 probes: 70% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
                 <Grid>
                     <Rectangle Fill="#FF2C2C3C" Height="7" Margin="15,0"></Rectangle>
                     <Rectangle Height="7" Margin="15,0" Width="225" HorizontalAlignment="Left">
@@ -48,7 +48,7 @@
                     </Rectangle>
 
                 </Grid>
-                <Label Content="12/12 tasks: 100% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <Label Content="12/12 surveys: 100% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
                 <Grid>
                     <Rectangle Fill="#FF2C2C3C" Height="7" Margin="15,0"></Rectangle>
                     <Rectangle Height="7" Margin="15,0" Width="300" HorizontalAlignment="Left">
@@ -69,7 +69,7 @@
                     </Rectangle>
 
                 </Grid>
-                <Label Content="1/3 tasks: 33% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <Label Content="1/3 reviews: 33% done" Padding="0" Margin="17,15,0,10" FontFamily="Roboto Light" FontSize="10" Foreground="#FFDFDFE1" Grid.Row="3" VerticalAlignment="Bottom"/>
                 <Grid>
                     <Rectangle Fill="#FF2C2C3C" Height="7" Margin="15,0"></Rectangle>
                     <Rectangle Height="7" Margin="15,0" Width="100" HorizontalAlignment="Left">

@@ -187,7 +187,11 @@
             </Grid>
             <Grid Background="#FF302F3E" Grid.Row="6" Margin="0,2,0,0">
 
-                <Label Content="Reynold's number: 7651.1" Padding="0" Margin="11,0,0,0" FontFamily="Roboto Light" FontSize="9" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    
+                    <Label Content="Reynold's number:" Padding="0" Margin="11,0,0,0" FontFamily="Roboto Light" FontSize="9" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Center"/>
+                    <Label x:Name="_REYNOLDS_LABEL" Content="7651.1" Padding="0" Margin="11,0,0,0" FontFamily="Roboto Light" FontSize="9" Foreground="#FFDFDFE1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                </StackPanel>
             </Grid>
         </Grid>
     </Grid>

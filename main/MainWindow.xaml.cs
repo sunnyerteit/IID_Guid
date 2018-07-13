@@ -339,6 +339,7 @@ namespace main
                 {
                     Canvas.SetLeft(_ROV, POSITION_X);
                     Canvas.SetTop(_ROV, POSITION_Y);
+                    ROV._REYNOLDS_LABEL.Content = $"{(velocity * 8100.0).ToString("0.0")}";
                     _LABEL_SOG.Content = $"{velocity.ToString("0.0")} m/s";
                     _LABEL_LONGITUDE.Content = $"{longitude.ToString("0.0000")}";
                     _LABEL_LATITUDE.Content = $"{latitude.ToString("0.0000")}";

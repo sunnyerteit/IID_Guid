@@ -10,13 +10,13 @@
 
     <Grid>
         <Canvas>
-            <MediaElement Name="_LEFT_CAMERA" Stretch="Fill" Canvas.Left="90" Canvas.Top="300" >
+            <MediaElement Name="_LEFT_CAMERA" Stretch="Fill" Canvas.Left="-305" Canvas.Top="-217" Width="1220" Height="868" >
                 <MediaElement.Triggers>
                     <EventTrigger RoutedEvent="MediaElement.Loaded">
                         <EventTrigger.Actions>
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <MediaTimeline Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg" Storyboard.TargetName="_LEFT_CAMERA" RepeatBehavior="Forever" />
+                                    <MediaTimeline Source="video/left.mp4" Storyboard.TargetName="_LEFT_CAMERA" RepeatBehavior="Forever" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger.Actions>

@@ -209,5 +209,13 @@
   <ItemGroup>
     <Resource Include="images\profile_mask.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="video\left.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="video\right.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

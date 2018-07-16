@@ -210,6 +210,9 @@
     <Resource Include="images\profile_mask.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\gripper_1_background.png" />
+    <Resource Include="images\gripper_1_arm_1.png" />
+    <Resource Include="images\gripper_1_arm_2.png" />
     <Content Include="video\left.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

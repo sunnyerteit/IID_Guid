@@ -5,11 +5,95 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:main.pages"
       mc:Ignorable="d" 
-      d:DesignHeight="685" d:DesignWidth="332"
+      d:DesignHeight="685" d:DesignWidth="372"
       Title="gripper">
 
-    <Grid Background="#FFC90202">
-        
-        <Label x:Name="LABEL_TEST" Content="gripper"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="16"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="180.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="317.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="109.5*"/>
+                <RowDefinition Height="80*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Gripper positioning:" Padding="0" Margin="0,0,0,13" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" VerticalAlignment="Bottom"/>
+            <Grid Grid.Row="1" Background="#FF302F3E">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="7"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
+                    
+                </Rectangle>
+                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="50">
+                    
+                </Rectangle>
+
+                <StackPanel Grid.Column="2" Margin="0,16,0,0">
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                </StackPanel>
+
+                <Canvas>
+                    <Image Source="/main;component/images/gripper_1_background.png"></Image>
+                    <Image Source="/main;component/images/gripper_1_arm_2.png"></Image>
+                    <Image Source="/main;component/images/gripper_1_arm_1.png"></Image>
+                    
+                </Canvas>
+            </Grid>
+            <Grid Grid.Row="3" Background="#FF302F3E">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="7"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
+                    
+                </Rectangle>
+                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="100">
+                    
+                </Rectangle>
+                <StackPanel Grid.Column="2" Margin="0,16,0,0">
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Row="5" Background="#FF302F3E">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="7"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
+                    
+                </Rectangle>
+                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="40">
+                    
+                </Rectangle>
+
+                <StackPanel Grid.Column="2" Margin="0,16,0,0">
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

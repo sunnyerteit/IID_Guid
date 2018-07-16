@@ -388,22 +388,37 @@ namespace main
             if (e.Key == Key.Left)
             {
                 LEFT_VIDEO.CAMERA_INPUT_X = -1.0;
-                RIGHT_VIDEO.CAMERA_INPUT_X = -1.0;
             }
             else if (e.Key == Key.Right)
             {
                 LEFT_VIDEO.CAMERA_INPUT_X = 1.0;
-                RIGHT_VIDEO.CAMERA_INPUT_X = 1.0;
             }
 
             if (e.Key == Key.Up)
             {
                 LEFT_VIDEO.CAMERA_INPUT_Y = -1.0;
-                RIGHT_VIDEO.CAMERA_INPUT_Y = -1.0;
             }
             else if (e.Key == Key.Down)
             {
                 LEFT_VIDEO.CAMERA_INPUT_Y = 1.0;
+            }
+
+            ///////////////////////////////////////////
+            if (e.Key == Key.NumPad4)
+            {
+                RIGHT_VIDEO.CAMERA_INPUT_X = -1.0;
+            }
+            else if (e.Key == Key.NumPad6)
+            {
+                RIGHT_VIDEO.CAMERA_INPUT_X = 1.0;
+            }
+
+            if (e.Key == Key.NumPad8)
+            {
+                RIGHT_VIDEO.CAMERA_INPUT_Y = -1.0;
+            }
+            else if (e.Key == Key.NumPad2)
+            {
                 RIGHT_VIDEO.CAMERA_INPUT_Y = 1.0;
             }
 

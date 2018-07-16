@@ -46,25 +46,49 @@ namespace main.pages
         {
             while (true)
             {
+                //if (CAMERA_INPUT_X > 0)
+                //{
+                //    CAMERA_POSITION_X = CAMERA_INPUT_X * 100 + INITIAL_CAMERA_POSITION_X;
+                //    CAMERA_INPUT_X -= 0.05 * CAMERA_INPUT_X * CAMERA_INPUT_X;
+                //}
+                //else if (CAMERA_INPUT_X < 0)
+                //{
+                //    CAMERA_POSITION_X = CAMERA_INPUT_X * 100 + INITIAL_CAMERA_POSITION_X;
+                //    CAMERA_INPUT_X += 0.05 * CAMERA_INPUT_X * CAMERA_INPUT_X;
+                //}
+
+                //if (CAMERA_INPUT_Y > 0)
+                //{
+                //    CAMERA_POSITION_Y = CAMERA_INPUT_Y * 100 + INITIAL_CAMERA_POSITION_Y;
+                //    CAMERA_INPUT_Y -= 0.05 * CAMERA_INPUT_Y * CAMERA_INPUT_Y;
+                //}
+                //else if (CAMERA_INPUT_Y < 0)
+                //{
+                //    CAMERA_POSITION_Y = CAMERA_INPUT_Y * 100 + INITIAL_CAMERA_POSITION_Y;
+                //    CAMERA_INPUT_Y += 0.05 * CAMERA_INPUT_Y * CAMERA_INPUT_Y;
+                //}
+
                 if (CAMERA_INPUT_X > 0)
                 {
-                    CAMERA_POSITION_X = CAMERA_INPUT_X * 100 + INITIAL_CAMERA_POSITION_X;
+                    CAMERA_POSITION_X += (CAMERA_INPUT_X * 10) * (305 - (CAMERA_POSITION_X - INITIAL_CAMERA_POSITION_X)) / 305.0 ;
                     CAMERA_INPUT_X -= 0.05 * CAMERA_INPUT_X * CAMERA_INPUT_X;
                 }
                 else if (CAMERA_INPUT_X < 0)
                 {
-                    CAMERA_POSITION_X = CAMERA_INPUT_X * 100 + INITIAL_CAMERA_POSITION_X;
+                    CAMERA_POSITION_X += (CAMERA_INPUT_X * 10) * (305 - (INITIAL_CAMERA_POSITION_X - CAMERA_POSITION_X)) / 305.0 ;
                     CAMERA_INPUT_X += 0.05 * CAMERA_INPUT_X * CAMERA_INPUT_X;
                 }
 
                 if (CAMERA_INPUT_Y > 0)
                 {
-                    CAMERA_POSITION_Y = CAMERA_INPUT_Y * 100 + INITIAL_CAMERA_POSITION_Y;
+                    //CAMERA_POSITION_Y += CAMERA_INPUT_Y * 10;
+                    CAMERA_POSITION_Y += (CAMERA_INPUT_Y * 10) * (217 - (CAMERA_POSITION_Y - INITIAL_CAMERA_POSITION_Y)) / 217.0 ;
                     CAMERA_INPUT_Y -= 0.05 * CAMERA_INPUT_Y * CAMERA_INPUT_Y;
                 }
                 else if (CAMERA_INPUT_Y < 0)
                 {
-                    CAMERA_POSITION_Y = CAMERA_INPUT_Y * 100 + INITIAL_CAMERA_POSITION_Y;
+                    //CAMERA_POSITION_Y += CAMERA_INPUT_Y * 10;
+                    CAMERA_POSITION_Y += (CAMERA_INPUT_Y * 10) * (217 - (INITIAL_CAMERA_POSITION_Y - CAMERA_POSITION_Y)) / 217.0 ;
                     CAMERA_INPUT_Y += 0.05 * CAMERA_INPUT_Y * CAMERA_INPUT_Y;
                 }
 

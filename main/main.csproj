@@ -213,6 +213,13 @@
     <Resource Include="images\gripper_1_background.png" />
     <Resource Include="images\gripper_1_arm_1.png" />
     <Resource Include="images\gripper_1_arm_2.png" />
+    <Resource Include="images\gripper_2_background.png" />
+    <Resource Include="images\gripper_2_arm_1.png" />
+    <Resource Include="images\gripper_2_arm_2.png" />
+    <Resource Include="images\gripper_2_arm_3.png" />
+    <Resource Include="images\gripper_3_arm_1.png" />
+    <Resource Include="images\gripper_3_arm_2.png" />
+    <Resource Include="images\gripper_3_arm_3.png" />
     <Content Include="video\left.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

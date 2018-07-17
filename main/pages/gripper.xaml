@@ -18,11 +18,11 @@
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="45*"/>
-                <RowDefinition Height="180.5*"/>
+                <RowDefinition Height="168 px"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="317.5*"/>
+                <RowDefinition Height="295 px"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="109.5*"/>
+                <RowDefinition Height="102 px"/>
                 <RowDefinition Height="80*"/>
             </Grid.RowDefinitions>
             <Label Content="Gripper positioning:" Padding="0" Margin="0,0,0,13" FontFamily="Roboto" FontSize="10" Foreground="#FFDFDFE1" VerticalAlignment="Bottom"/>
@@ -35,9 +35,7 @@
                 <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
                     
                 </Rectangle>
-                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="50">
-                    
-                </Rectangle>
+                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="128" RenderTransformOrigin="0,1"/>
 
                 <StackPanel Grid.Column="2" Margin="0,16,0,0">
                     <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
@@ -48,8 +46,8 @@
 
                 <Canvas>
                     <Image Source="/main;component/images/gripper_1_background.png"></Image>
-                    <Image Source="/main;component/images/gripper_1_arm_2.png"></Image>
-                    <Image Source="/main;component/images/gripper_1_arm_1.png"></Image>
+                    <Image x:Name="_GRIPPER_1_ARM_2" Source="/main;component/images/gripper_1_arm_2.png"></Image>
+                    <Image x:Name="_GRIPPER_1_ARM_1" Source="/main;component/images/gripper_1_arm_1.png" RenderTransformOrigin="0.5,0.881"></Image>
                     
                 </Canvas>
             </Grid>
@@ -62,18 +60,22 @@
                 <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
                     
                 </Rectangle>
-                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="100">
-                    
-                </Rectangle>
+                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="255" RenderTransformOrigin="0.5,1"/>
                 <StackPanel Grid.Column="2" Margin="0,16,0,0">
+                    <Label Content="48°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
                     <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="32°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="24°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="16°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="8°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="0°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
                 </StackPanel>
+                <Canvas>
+                    <Image Source="/main;component/images/gripper_2_background.png"></Image>
+                    <Image Source="/main;component/images/gripper_2_arm_1.png"></Image>
+                    <Image x:Name="_GRIPPER_2_ARM_3" Source="/main;component/images/gripper_2_arm_3.png" RenderTransformOrigin="0.58,0.345" Canvas.Left="0" Canvas.Top="0"></Image>
+                    <Image x:Name="_GRIPPER_2_ARM_2" Source="/main;component/images/gripper_2_arm_2.png" RenderTransformOrigin="0.477,0.296"/>
+                </Canvas>
 
             </Grid>
             <Grid Grid.Row="5" Background="#FF302F3E">
@@ -90,9 +92,14 @@
                 </Rectangle>
 
                 <StackPanel Grid.Column="2" Margin="0,16,0,0">
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="30°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="10°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
                 </StackPanel>
+                <Canvas>
+                    <Image x:Name="_GRIPPER_3_ARM_2" Source="/main;component/images/gripper_3_arm_2.png" RenderTransformOrigin="0.383,0.423"/>
+                    <Image x:Name="_GRIPPER_3_ARM_3" Source="/main;component/images/gripper_3_arm_3.png" RenderTransformOrigin="0.383,0.577"/>
+                    <Image Source="/main;component/images/gripper_3_arm_1.png"></Image>
+                </Canvas>
             </Grid>
         </Grid>
     </Grid>

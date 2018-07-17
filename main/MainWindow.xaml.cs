@@ -443,10 +443,16 @@ namespace main
             if (e.Key == Key.M)
             {
                 ROLL_INPUT = 1.0;
+                GRIPPER.GRIPPER_2_INPUT = 1.0;
+                GRIPPER.GRIPPER_1_INPUT = 1.0;
+                GRIPPER.GRIPPER_3_INPUT = 1.0;
             }
             else if (e.Key == Key.N)
             {
                 ROLL_INPUT = - 1.0;
+                GRIPPER.GRIPPER_2_INPUT = - 1.0;
+                GRIPPER.GRIPPER_1_INPUT = - 1.0;
+                GRIPPER.GRIPPER_3_INPUT = - 1.0;
             }
 
             if (e.Key == Key.D4)

@@ -35,13 +35,13 @@
                 <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
                     
                 </Rectangle>
-                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="128" RenderTransformOrigin="0,1"/>
+                <Rectangle x:Name="_GRIPPER_1_BAR" Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="128" RenderTransformOrigin="0,1"/>
 
                 <StackPanel Grid.Column="2" Margin="0,16,0,0">
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
-                    <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="45°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="23°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="-23°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
+                    <Label Content="-45°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
                 </StackPanel>
 
                 <Canvas>
@@ -60,7 +60,7 @@
                 <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
                     
                 </Rectangle>
-                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="255" RenderTransformOrigin="0.5,1"/>
+                <Rectangle x:Name="_GRIPPER_2_BAR" Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="255" RenderTransformOrigin="0.5,1"/>
                 <StackPanel Grid.Column="2" Margin="0,16,0,0">
                     <Label Content="48°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
                     <Label Content="40°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>
@@ -87,9 +87,7 @@
                 <Rectangle Grid.Column="1" Fill="#FF292934" Margin="0,20">
                     
                 </Rectangle>
-                <Rectangle Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="40">
-                    
-                </Rectangle>
+                <Rectangle x:Name="_GRIPPER_3_BAR" Grid.Column="1" Fill="#FF4B7284" Margin="0,20" VerticalAlignment="Bottom" Height="62" RenderTransformOrigin="0,1"/>
 
                 <StackPanel Grid.Column="2" Margin="0,16,0,0">
                     <Label Content="30°" Margin="0,0,10,30" Foreground="#B2D3D3D5" FontFamily="Roboto Light" Padding="0" HorizontalContentAlignment="Right" FontSize="8"/>

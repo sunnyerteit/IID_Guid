@@ -24,6 +24,9 @@ namespace main.pages
         public RotateTransform ROTATE_TRANSFORM_GRIPPER_1;
         public RotateTransform ROTATE_TRANSFORM_GRIPPER_2;
         public RotateTransform ROTATE_TRANSFORM_GRIPPER_3;
+        public ScaleTransform TRANSFORM_GRIPPER_1;
+        public ScaleTransform TRANSFORM_GRIPPER_2;
+        public ScaleTransform TRANSFORM_GRIPPER_3;
         static double GRIPPER_1_LENGTH;
         static double GRIPPER_2_LENGTH;
         public double GRIPPER_3_INPUT;
@@ -78,6 +81,8 @@ namespace main.pages
 
                 Dispatcher.Invoke(() =>
                 {
+                    TRANSFORM_GRIPPER_1 = new ScaleTransform(1, (GRIPPER_1_ANGLE + 45.0) / 90.0, 0.5, 1.0);
+                    _GRIPPER_1_BAR.RenderTransform = TRANSFORM_GRIPPER_1;
                     ROTATE_TRANSFORM_GRIPPER_1 = new RotateTransform(GRIPPER_1_ANGLE);
                     _GRIPPER_1_ARM_1.RenderTransform = ROTATE_TRANSFORM_GRIPPER_1;
                     Canvas.SetTop(_GRIPPER_1_ARM_2,  - GRIPPER_1_LENGTH * (( Math.Cos(Math.PI * (GRIPPER_1_ANGLE) / 180.0)) - 1.0));
@@ -114,6 +119,8 @@ namespace main.pages
 
                 Dispatcher.Invoke(() =>
                 {
+                    TRANSFORM_GRIPPER_2 = new ScaleTransform(1, (GRIPPER_2_ANGLE) / 45.0, 0.5, 1.0);
+                    _GRIPPER_2_BAR.RenderTransform = TRANSFORM_GRIPPER_2;
                     ROTATE_TRANSFORM_GRIPPER_2 = new RotateTransform(GRIPPER_2_ANGLE);
                     _GRIPPER_2_ARM_2.RenderTransform = ROTATE_TRANSFORM_GRIPPER_2;
                     Canvas.SetTop(_GRIPPER_2_ARM_3, GRIPPER_2_LENGTH * (- Math.Cos(Math.PI * (- 25.0 - GRIPPER_2_ANGLE - 90) / 180.0) + Math.Cos(Math.PI * (- 25.0 - 90.0) / 180.0)));
@@ -151,6 +158,8 @@ namespace main.pages
 
                 Dispatcher.Invoke(() =>
                 {
+                    TRANSFORM_GRIPPER_3 = new ScaleTransform(1, (GRIPPER_3_ANGLE) / 15.0, 0.5, 1.0);
+                    _GRIPPER_3_BAR.RenderTransform = TRANSFORM_GRIPPER_3;
                     ROTATE_TRANSFORM_GRIPPER_3 = new RotateTransform(GRIPPER_3_ANGLE);
                     _GRIPPER_3_ARM_2.RenderTransform = ROTATE_TRANSFORM_GRIPPER_3;
                     ROTATE_TRANSFORM_GRIPPER_3 = new RotateTransform(- GRIPPER_3_ANGLE);

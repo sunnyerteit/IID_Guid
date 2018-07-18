@@ -69,7 +69,7 @@ namespace main.pages
                         GRIPPER_1_ANGLE = 45.0;
                     }
                 }
-                else if (GRIPPER_2_INPUT < 0)
+                else if (GRIPPER_1_INPUT < 0)
                 {
                     GRIPPER_1_ANGLE += GRIPPER_1_INPUT;
                     GRIPPER_1_INPUT -= 0.8 * GRIPPER_1_INPUT;

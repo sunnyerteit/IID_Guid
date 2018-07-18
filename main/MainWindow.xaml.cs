@@ -481,7 +481,6 @@ namespace main
 
         void Udp_receiver()
         {
-            Thread.Sleep(1000);
             // Establish UDP-connection
             UdpClient listener = new UdpClient(LISTEN_PORT);
 
@@ -497,31 +496,56 @@ namespace main
                 while ( true )
                 {
                     receive_byte_array = listener.Receive(ref groupEP);
-                    //Console.WriteLine("Received a broadcast from {0}", groupEP.ToString());
                     received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
-                    //Console.WriteLine("data follows \n{0}\n\n", received_data);
 
-                    // Split nested list to doubles
                     foreach (var c in CHARS_TO_REMOVE)
                     {
                         received_data = received_data.Replace(c, string.Empty);
                     }
+
                     string[] input = received_data.Split(',');
-
-                    // Convert values to public double
-                    //input_x = Convert.ToDouble(input[0]);
-                    //input_y = Convert.ToDouble(input[1]);
-
-                    // Change color given button presses
-
 
                     Dispatcher.Invoke(() =>
                     {
                         Change_Tab(Int32.Parse(input.Last()));
-                        Console.WriteLine(input[28]);
-                        Console.WriteLine(input[13]);
+
+
+                        // Alarms and sensors
+                        ROV.Battery(Convert.ToBoolean(input[11]));
+                        ROV.Collision(Convert.ToBoolean(input[12]));
+                        ROV.Wifi(Convert.ToBoolean(input[13]));
+                        ROV.Radar(Convert.ToBoolean(input[26]));
+                        ROV.Corrosion(Convert.ToBoolean(input[27]));
+                        ROV.Bio(Convert.ToBoolean(input[28]));
+                        ///////////////////////
+
+                        if (Int32.Parse(input.Last()) == 0)
+                        {
+                            // Rov controls
+                            INPUT_X = Convert.ToDouble(input[15]);
+                            INPUT_Y = Convert.ToDouble(input[16]);
+
+                            YAW_INPUT = Convert.ToDouble(input[5]);
+                            ROLL_INPUT = Convert.ToDouble(input[4]);
+                            PITCH_INPUT = Convert.ToDouble(input[3]);
+                        } else if (Int32.Parse(input.Last()) == 1)
+                        {
+                            // Gripper controls
+                            GRIPPER.GRIPPER_1_INPUT = Convert.ToDouble(input[20]);
+                            GRIPPER.GRIPPER_2_INPUT = Convert.ToDouble(input[5]);
+                            GRIPPER.GRIPPER_3_INPUT = - Convert.ToDouble(input[3]);
+                        } else if (Int32.Parse(input.Last()) == 2)
+                        {
+                            // Camera controls
+                            LEFT_VIDEO.CAMERA_INPUT_X = Convert.ToDouble(input[19]);
+                            LEFT_VIDEO.CAMERA_INPUT_Y = Convert.ToDouble(input[18]);
+
+                            RIGHT_VIDEO.CAMERA_INPUT_X = Convert.ToDouble(input[4]);
+                            RIGHT_VIDEO.CAMERA_INPUT_Y = Convert.ToDouble(input[3]);
+                        }
                     });
-                    Thread.Sleep(10);
+
+                    Thread.Sleep(50);
                 }
             }
             catch (Exception s)

@@ -22,10 +22,16 @@ namespace main.pages
     {
         public RotateTransform ROTATE_TRANSFORM_ROLL;
         public RotateTransform ROTATE_TRANSFORM_DIRECTION;
+        SolidColorBrush NEUTRAL = new SolidColorBrush();
+        SolidColorBrush BLUE = new SolidColorBrush();
+        SolidColorBrush RED = new SolidColorBrush();
         public rov()
         {
 
             InitializeComponent();
+            RED.Color = Color.FromArgb(255, 210, 115, 130);
+            BLUE.Color = Color.FromArgb(255, 91, 145, 166);
+            NEUTRAL.Color = Color.FromArgb(255, 137, 136, 145);
         }
 
         public void Pitch(double pitch)
@@ -85,6 +91,73 @@ namespace main.pages
         {
             int r = x % m;
             return r < 0 ? r + m : r;
+        }
+
+        public void Battery(bool control)
+        {
+            if (control == true)
+            {
+                _BATTERY.Fill = RED;
+            }
+            else
+            {
+                _BATTERY.Fill = NEUTRAL;
+            }
+        }
+        public void Collision(bool control)
+        {
+            if (control == true)
+            {
+                _COLLISION.Fill = RED;
+            }
+            else
+            {
+                _COLLISION.Fill = NEUTRAL;
+            }
+        }
+        public void Wifi(bool control)
+        {
+            if (control == true)
+            {
+                _WIFI.Fill = RED;
+            }
+            else
+            {
+                _WIFI.Fill = NEUTRAL;
+            }
+        }
+        public void Radar(bool control)
+        {
+            if (control == true)
+            {
+                _RADAR.Fill = BLUE;
+            }
+            else
+            {
+                _RADAR.Fill = NEUTRAL;
+            }
+        }
+        public void Corrosion(bool control)
+        {
+            if (control == true)
+            {
+                _CORROSION.Fill = BLUE;
+            }
+            else
+            {
+                _CORROSION.Fill = NEUTRAL;
+            }
+        }
+        public void Bio(bool control)
+        {
+            if (control == true)
+            {
+                _BIO.Fill = BLUE;
+            }
+            else
+            {
+                _BIO.Fill = NEUTRAL;
+            }
         }
     }
 }

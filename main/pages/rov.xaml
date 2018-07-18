@@ -77,7 +77,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Background="#FF302F3E" Margin="0,0,1,0">
 
-                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                    <Rectangle x:Name="_BATTERY" Fill="#FF898891" Width="17" Height="17" Margin="0">
                         <Rectangle.OpacityMask>
                             <ImageBrush ImageSource="/main;component/images/battery.png"/>
                         </Rectangle.OpacityMask>
@@ -85,7 +85,7 @@
                     </Rectangle>
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="1">
-                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                    <Rectangle x:Name="_COLLISION" Fill="#FF898891" Width="17" Height="17" Margin="0">
                         <Rectangle.OpacityMask>
                             <ImageBrush ImageSource="/main;component/images/collision.png"/>
                         </Rectangle.OpacityMask>
@@ -95,7 +95,7 @@
                 </Grid>
 
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="2">
-                    <Rectangle Fill="#D27382" Width="17" Height="17" Margin="0">
+                    <Rectangle x:Name="_WIFI" Fill="#D27382" Width="17" Height="17" Margin="0">
                         <Rectangle.OpacityMask>
                             <ImageBrush ImageSource="/main;component/images/wifi.png"/>
                         </Rectangle.OpacityMask>
@@ -137,7 +137,7 @@
                     <ColumnDefinition Width="315*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Background="#FF302F3E" Margin="0,0,1,0">
-                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                    <Rectangle x:Name="_RADAR" Fill="#FF898891" Width="17" Height="17" Margin="0">
                         <Rectangle.OpacityMask>
                             <ImageBrush ImageSource="/main;component/images/radar.png"/>
                         </Rectangle.OpacityMask>
@@ -145,7 +145,7 @@
                     </Rectangle>
                 </Grid>
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="1">
-                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                    <Rectangle x:Name="_CORROSION" Fill="#FF898891" Width="17" Height="17" Margin="0">
                         <Rectangle.OpacityMask>
                             <ImageBrush ImageSource="/main;component/images/corrosion.png"/>
                         </Rectangle.OpacityMask>
@@ -155,7 +155,7 @@
                 </Grid>
 
                 <Grid Background="#FF302F3E" Margin="1,0" Grid.Column="2">
-                    <Rectangle Fill="#FF898891" Width="17" Height="17" Margin="0">
+                    <Rectangle x:Name="_BIO" Fill="#FF898891" Width="17" Height="17" Margin="0">
                         <Rectangle.OpacityMask>
                             <ImageBrush ImageSource="/main;component/images/bio.png"/>
                         </Rectangle.OpacityMask>

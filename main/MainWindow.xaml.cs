@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Net;
+using System.Net.Sockets;
 
 namespace main
 {
@@ -39,6 +41,8 @@ namespace main
         public double YAW;
         public double YAW_INPUT;
         public RotateTransform ROTATE_TRANSFORM_YAW;
+        private const int LISTEN_PORT = 8444;
+        string[] CHARS_TO_REMOVE = new string[] { "[", "]" };
 
         // Brushes
         SolidColorBrush DARK_BACKGROUND = new SolidColorBrush();
@@ -208,6 +212,10 @@ namespace main
             Thread Orientation_thread = new Thread(()
                 => Orientation_components());
             Orientation_thread.Start();
+
+            Thread Udp_thread = new Thread(()
+                => Udp_receiver());
+            Udp_thread.Start();
         }
 
         void Depth_components()
@@ -469,6 +477,56 @@ namespace main
         {
             int r = x % m;
             return r < 0 ? r + m : r;
+        }
+
+        void Udp_receiver()
+        {
+            Thread.Sleep(1000);
+            // Establish UDP-connection
+            UdpClient listener = new UdpClient(LISTEN_PORT);
+
+            IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, LISTEN_PORT);
+
+            string received_data;
+            byte[] receive_byte_array;
+
+
+
+            try
+            {
+                while ( true )
+                {
+                    receive_byte_array = listener.Receive(ref groupEP);
+                    //Console.WriteLine("Received a broadcast from {0}", groupEP.ToString());
+                    received_data = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
+                    //Console.WriteLine("data follows \n{0}\n\n", received_data);
+
+                    // Split nested list to doubles
+                    foreach (var c in CHARS_TO_REMOVE)
+                    {
+                        received_data = received_data.Replace(c, string.Empty);
+                    }
+                    string[] input = received_data.Split(',');
+
+                    // Convert values to public double
+                    //input_x = Convert.ToDouble(input[0]);
+                    //input_y = Convert.ToDouble(input[1]);
+
+                    // Change color given button presses
+
+
+                    Dispatcher.Invoke(() =>
+                    {
+                        Change_Tab(Int32.Parse(input.Last()));
+                        Console.WriteLine(input[28]);
+                        Console.WriteLine(input[13]);
+                    });
+                    Thread.Sleep(10);
+                }
+            }
+            catch (Exception s)
+            {
+            }
         }
 
     }
